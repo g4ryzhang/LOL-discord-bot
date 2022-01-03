@@ -61,7 +61,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 // When the client is ready, run this code (only once)
 client.once('ready', async () => {
-	browser = await puppeteer.launch();
+	browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
 	console.log('Ready!');
 });
 
